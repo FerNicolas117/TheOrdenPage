@@ -32,13 +32,8 @@ export default function Home() {
     <div className="w-full min-h-screen p-4">
       <div className="max-w-6xl mx-auto">
 
-        <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
-          <InteractiveGridPattern
-            className={cn(
-              "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-              ""
-            )}
-          />
+        <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+          
 
           <div className="z-1">
             <Image
