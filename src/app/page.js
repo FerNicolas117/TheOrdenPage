@@ -25,16 +25,15 @@ import { FaXTwitter } from "react-icons/fa6";
 
 import FacebookPosts from "@/components/mycomponents/FacebookPosts";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
   const texts = ["El Mejor Grupo", "Norteño Banda", "Para Ti"];
 
   return (
     <div className="w-full min-h-screen p-4">
       <div className="max-w-6xl mx-auto">
-
         <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
-          
-
           <div className="z-1">
             <Image
               src={lettersLogo}
@@ -56,7 +55,6 @@ export default function Home() {
               </span>
             </ShimmerButton>
           </a>
-          
         </div>
 
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
@@ -78,34 +76,53 @@ export default function Home() {
         </div>
 
         {/* Redes Sociales */}
-        <div className="mt-[70px]">
-          <h2 className="text-white text-center text-4xl sm:text-5xl md:text-6xl font-bold">
-            Síguenos en todas nuestras <span className="text-purple-400">Redes Sociales</span>
-          </h2>
-          <div className="flex flex-col justify-center items-center mt-12">
-            <a href="" target="_blank" className="">
-              <Button className={"text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"}>
-                <FaFacebook />
-                Facebook
-              </Button>
-            </a>
-            <a href="" target="_blank" className="mt-3">
-              <Button className={"text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"}>
-                <FaInstagram  />
-                Instagram
-              </Button>
-            </a>
-            <a href="" target="_blank" className="mt-3">
-              <Button className={"text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"}>
-                <FaXTwitter   />
-                (Twitter)
-              </Button>
-            </a>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-12 max-w-4xl mx-auto"
+        >
+          <div className="mt-[70px]">
+            <h2 className="text-white text-center text-4xl sm:text-5xl md:text-6xl font-bold">
+              Síguenos en todas nuestras{" "}
+              <span className="text-purple-400">Redes Sociales</span>
+            </h2>
+            <div className="flex flex-col justify-center items-center mt-12">
+              <a href="" target="_blank" className="">
+                <Button
+                  className={
+                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                  }
+                >
+                  <FaFacebook />
+                  Facebook
+                </Button>
+              </a>
+              <a href="" target="_blank" className="mt-3">
+                <Button
+                  className={
+                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                  }
+                >
+                  <FaInstagram />
+                  Instagram
+                </Button>
+              </a>
+              <a href="" target="_blank" className="mt-3">
+                <Button
+                  className={
+                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                  }
+                >
+                  <FaXTwitter />
+                  (Twitter)
+                </Button>
+              </a>
+            </div>
           </div>
-        </div>
-
+        </motion.div>
         
-
       </div>
     </div>
   );
