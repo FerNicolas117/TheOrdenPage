@@ -21,11 +21,13 @@ import { Button } from "@/components/ui/button";
 
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 import FacebookPosts from "@/components/mycomponents/FacebookPosts";
 
 import { motion } from "framer-motion";
+import ProximasFechas from "@/components/mycomponents/ProximasFechas";
 
 export default function Home() {
   const texts = ["El Mejor Grupo", "Norteño Banda", "Para Ti"];
@@ -35,13 +37,19 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
           <div className="z-1">
-            <Image
-              src={lettersLogo}
-              alt="Letters Logo"
-              width={700}
-              height={400}
-              className="z-1"
-            />
+            <motion.div
+              className="flex justify-center items-center mt-4"
+              whileHover={{ scale: 1.05 }} // Efecto zoom
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Image
+                src={lettersLogo}
+                alt="Letters Logo"
+                width={700}
+                height={400}
+                className="z-1"
+              />
+            </motion.div>
           </div>
 
           <a
@@ -67,19 +75,33 @@ export default function Home() {
 
         {/* Spotify Section */}
         <div className="mt-[100px]">
-          <h2 className="text-white text-center text-4xl sm:text-5xl md:text-6xl font-bold">
-            Síguenos en <span className="text-[#1ED760]">Spotify</span>
-          </h2>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }} // x: 30 hace que empiece 30px a la derecha
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-white text-center text-4xl sm:text-5xl md:text-6xl font-bold">
+              Síguenos en <span className="text-[#1ED760]">Spotify</span>
+            </h2>
+          </motion.div>
         </div>
         <div className="flex justify-center mt-8">
-          <Spotify link="https://open.spotify.com/intl-es/artist/21Zn1sfla8oRQhrbQNYYzg" />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }} // x: 30 hace que empiece 30px a la derecha
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9 }}
+            viewport={{ once: true }}
+          >
+            <Spotify link="https://open.spotify.com/intl-es/artist/21Zn1sfla8oRQhrbQNYYzg" />
+          </motion.div>
         </div>
 
         {/* Redes Sociales */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.9 }}
           viewport={{ once: true }}
           className="mt-12 max-w-4xl mx-auto"
         >
@@ -89,40 +111,96 @@ export default function Home() {
               <span className="text-purple-400">Redes Sociales</span>
             </h2>
             <div className="flex flex-col justify-center items-center mt-12">
-              <a href="" target="_blank" className="">
-                <Button
-                  className={
-                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
-                  }
+              <a
+                href="https://www.facebook.com/share/1Fh7id8jXL/?mibextid=wwXIfr"
+                target="_blank"
+                className=""
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }} // Efecto zoom
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <FaFacebook />
-                  Facebook
-                </Button>
+                  <Button
+                    className={
+                      "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                    }
+                  >
+                    <FaFacebook />
+                    Facebook
+                  </Button>
+                </motion.div>
               </a>
-              <a href="" target="_blank" className="mt-3">
-                <Button
-                  className={
-                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
-                  }
+              <a
+                href="https://www.instagram.com/grupo.laorden?igsh=OTVpem1oZXYzbmh6"
+                target="_blank"
+                className="mt-3"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }} // Efecto zoom
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <FaInstagram />
-                  Instagram
-                </Button>
+                  <Button
+                    className={
+                      "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                    }
+                  >
+                    <FaInstagram />
+                    Instagram
+                  </Button>
+                </motion.div>
               </a>
-              <a href="" target="_blank" className="mt-3">
-                <Button
-                  className={
-                    "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
-                  }
+              <a
+                href="https://www.tiktok.com/@la.orden89?_t=ZM-8vHpekkawdh&_r=1"
+                target="_blank"
+                className="mt-3"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }} // Efecto zoom
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <FaXTwitter />
-                  (Twitter)
-                </Button>
+                  <Button
+                    className={
+                      "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                    }
+                  >
+                    <FaTiktok />
+                    TikTok
+                  </Button>
+                </motion.div>
+              </a>
+              <a
+                href="https://x.com/laorden522054?s=11"
+                target="_blank"
+                className="mt-3"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }} // Efecto zoom
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Button
+                    className={
+                      "text-xl w-[250px] md:w-[300px] h-auto bg-black border-2 border-solid hover:text-black hover:bg-white cursor-pointer rounded-full"
+                    }
+                  >
+                    <FaXTwitter />
+                    (Twitter)
+                  </Button>
+                </motion.div>
               </a>
             </div>
           </div>
         </motion.div>
-        
+
+        {/* Proximas Fechas */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.9 }}
+          viewport={{ once: true }}
+          className="mt-12 max-w-4xl mx-auto"
+        >
+          <ProximasFechas />
+        </motion.div>
       </div>
     </div>
   );
